@@ -4,9 +4,7 @@ on: [push]
 
 jobs:
   lint_build_test:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [18.x]
@@ -27,6 +25,3 @@ jobs:
       run: npm run lint
     - name: build & test
       run: npm run build && npm test
-    - run: npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

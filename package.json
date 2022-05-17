@@ -22,7 +22,8 @@
     "lint": "prettier src test -c",
     "format": "prettier src test --write",
     "prepack": "rm -rf dist && npm run build",
-    "release": "npm run prepack && source .env && npx np"
+    "release": "npm run prepack && source .env && npx np",
+    "publish": "npm publish"
   },
   "devDependencies": {
     "microbundle": "^0.15.0",
