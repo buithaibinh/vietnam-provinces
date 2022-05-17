@@ -20,9 +20,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+        registry-url: 'https://registry.npmjs.org'
     - name: npm install
       run: npm ci
     - name: lint
       run: npm run lint
     - name: build & test
       run: npm run build && npm test
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
