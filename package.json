@@ -1,0 +1,58 @@
+{
+  "name": "vietnam-provinces",
+  "description": "API for Viet Nam administrative divisions; API tỉnh thành Việt Nam",
+  "version": "0.0.1",
+  "source": "src/main.ts",
+  "main": "dist/main.umd.js",
+  "module": "dist/main.modern.module.js",
+  "unpkg": "dist/main.umd.js",
+  "types": "dist/main.d.ts",
+  "keywords": [
+    "vietnam",
+    "provinces"
+  ],
+  "files": [
+    "dist/**.js*",
+    "dist/**/*.ts"
+  ],
+  "scripts": {
+    "build": "microbundle --define PKG_VERSION=$npm_package_version",
+    "watch": "microbundle watch --define PKG_VERSION=$npm_package_version",
+    "test": "node --test test",
+    "lint": "prettier src test -c",
+    "format": "prettier src test --write",
+    "prepack": "rm -rf dist && npm run build",
+    "release": "npm run prepack && source .env && npx np"
+  },
+  "devDependencies": {
+    "microbundle": "^0.15.0",
+    "prettier": "^2.6.2",
+    "xlsx": "^0.18.5"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buithaibinh/vietnam-provinces.git"
+  },
+  "author": "Hugo",
+  "bugs": {
+    "url": "https://github.com/buithaibinh/vietnam-provinces/issues"
+  },
+  "homepage": "https://github.com/buithaibinh/vietnam-provinces#readme",
+  "dependencies": {
+
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
+  }
+}

@@ -1,0 +1,28 @@
+name: Build & test
+
+on: [push]
+
+jobs:
+  lint_build_test:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    env:
+      CI: true
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install
+      run: npm ci
+    - name: lint
+      run: npm run lint
+    - name: build & test
+      run: npm run build && npm test
