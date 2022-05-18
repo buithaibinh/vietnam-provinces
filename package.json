@@ -1,7 +1,7 @@
 {
   "name": "vietnam-provinces",
   "description": "API for Viet Nam administrative divisions; API tỉnh thành Việt Nam",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "source": "src/main.ts",
   "main": "dist/main.umd.js",
   "module": "dist/main.modern.module.js",
