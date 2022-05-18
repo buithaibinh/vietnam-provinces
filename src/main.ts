@@ -12,19 +12,19 @@ export const getProvinces = (): Province[] => {
   return provinces;
 };
 
-export const getDistricts = (province_code: string): District[] => {
+export const getDistricts = (province_code?: string): District[] => {
   return province_code
-    ? districts
-    : districts.filter((d) => d.province_code === province_code);
+    ? districts.filter((d) => d.province_code === province_code)
+    : districts;
 };
 
 export const getWards = (district_code?: string): Ward[] => {
   return district_code
-    ? wards
-    : wards.filter((ward) => ward.district_code === district_code);
+    ? wards.filter((ward) => ward.district_code === district_code)
+    : wards;
 };
 
-export const getProvincesWithDetail = (): ProvinceDetail => {
+export const getProvincesWithDetail = (code?: string): ProvinceDetail => {
   const tree: any = {};
   provinces.forEach((province: Province) => {
     tree[province.code] = province;
@@ -45,7 +45,7 @@ export const getProvincesWithDetail = (): ProvinceDetail => {
       ward;
   });
 
-  return tree;
+  return code ? tree[code] : tree;
 };
 
 export { Province, District, Ward, ProvinceDetail };
