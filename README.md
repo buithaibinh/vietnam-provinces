@@ -1,5 +1,5 @@
 # vietnam-provinces
-This is a utility package to get Vietnam provinces. Data is collected monthly from [Tổng cục thống kê(https://danhmuchanhchinh.gso.gov.vn/Default.aspx)
+This is a utility package to get Vietnam provinces. Data is collected monthly from [Tổng cục thống kê](https://danhmuchanhchinh.gso.gov.vn/Default.aspx)
 
 ## Install
 
